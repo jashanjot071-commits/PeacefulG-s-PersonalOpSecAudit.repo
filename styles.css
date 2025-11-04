@@ -1,0 +1,599 @@
+/* General Reset and Base Styles */
+:root {
+    --color-primary-blue: #0056b3; /* Deeper, more professional blue */
+    --color-secondary-green: #28a745; /* Vibrant, trustworthy green */
+    --color-accent-light-blue: #007bff; /* Lighter blue for accents */
+    --color-text-dark: #212529; /* Darker text for readability */
+    --color-text-light: #ffffff;
+    --color-background-light: #f8f9fa; /* Slightly off-white background */
+    --color-card-background: #ffffff;
+    --max-width: 1200px;
+    --spacing-lg: 100px; /* Increased general spacing */
+    --spacing-md: 60px;
+    --spacing-sm: 30px;
+    --border-radius-sm: 8px;
+    --border-radius-lg: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Professional Google Font */
+    line-height: 1.7; /* Improved line height for readability */
+    color: var(--color-text-dark);
+    background-color: var(--color-background-light);
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+}
+
+a {
+    color: var(--color-accent-light-blue);
+    text-decoration: none;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-secondary-green);
+}
+
+h1, h2, h3 {
+    margin-bottom: 0.8em;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 3.2rem; /* Larger hero headline */
+    letter-spacing: -0.03em; /* Tighter for professionalism */
+    color: var(--color-primary-blue);
+}
+h1 strong {
+    color: var(--color-secondary-green);
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1.8rem;
+    color: var(--color-text-dark);
+}
+h2 strong {
+    color: var(--color-primary-blue);
+}
+
+p.section-description {
+    text-align: center;
+    margin-bottom: 3.5rem;
+    font-size: 1.15rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #6c757d; /* Softer text color */
+}
+
+/* --- Navigation & Header Styling --- */
+.sticky-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--color-text-light);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* More pronounced shadow */
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 0; /* Slightly more padding */
+}
+
+.logo {
+    font-size: 1.7rem; /* Larger logo */
+    font-weight: 800;
+    color: var(--color-primary-blue);
+}
+.logo strong {
+    color: var(--color-secondary-green);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: var(--spacing-sm);
+    align-items: center;
+}
+
+.main-nav a {
+    padding: 0.7rem 1.1rem;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    border-radius: var(--border-radius-sm);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main-nav a:hover {
+    background-color: rgba(0, 119, 182, 0.08); /* Subtle highlight */
+    color: var(--color-primary-blue);
+}
+
+.cta-nav-button {
+    background-color: var(--color-primary-blue);
+    color: var(--color-text-light) !important;
+    padding: 0.7rem 1.5rem !important;
+    border-radius: var(--border-radius-sm);
+    box-shadow: 0 4px 8px rgba(0, 86, 179, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.cta-nav-button:hover {
+    background-color: var(--color-secondary-green);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(40, 167, 69, 0.4);
+}
+
+.hamburger {
+    display: none;
+    font-size: 1.8rem; /* Larger hamburger icon */
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-primary-blue);
+    padding: 0.5rem;
+}
+
+/* --- CTA Button Base Style --- */
+.cta-button {
+    display: inline-block;
+    padding: 1.2rem 2.5rem; /* More prominent buttons */
+    border-radius: var(--border-radius-lg); /* Rounded corners */
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none; /* Removed border */
+    letter-spacing: 0.02em; /* Slightly spaced out text */
+}
+
+.primary-cta {
+    background: linear-gradient(135deg, var(--color-primary-blue) 0%, var(--color-accent-light-blue) 100%); /* Gradient background */
+    color: var(--color-text-light);
+    box-shadow: 0 8px 20px rgba(0, 86, 179, 0.35); /* Deeper shadow */
+}
+
+.primary-cta:hover {
+    background: linear-gradient(135deg, var(--color-accent-light-blue) 0%, var(--color-secondary-green) 100%); /* Hover gradient */
+    box-shadow: 0 10px 25px rgba(0, 86, 179, 0.45);
+    transform: translateY(-5px); /* More pronounced lift */
+}
+
+/* --- Section Styling --- */
+section {
+    padding: var(--spacing-lg) 0;
+    position: relative; /* For any potential background elements */
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(180deg, var(--color-background-light) 0%, #e9ecef 100%); /* Subtle gradient background */
+    text-align: center;
+    padding: 120px 0; /* More vertical space */
+}
+
+.hero-intro {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-secondary-green);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.hero-section h1 {
+    max-width: 1000px;
+    margin: 0 auto 1.5rem;
+}
+
+.hero-section .sub-headline {
+    font-size: 1.4rem;
+    margin-bottom: 3rem;
+    font-weight: 400;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #495057;
+}
+
+/* Services Section */
+.services-section {
+    background-color: var(--color-background-light);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Slightly larger min column size */
+    gap: var(--spacing-md);
+}
+
+.service-card {
+    background-color: var(--color-card-background);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-lg);
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07); /* Softer, deeper shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e9ecef; /* Subtle border */
+}
+
+.service-card:hover {
+    transform: translateY(-7px); /* More pronounced lift */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.icon-wrapper {
+    background-color: #e0f7fa; /* Light background for icons */
+    border-radius: 50%;
+    width: 80px; /* Larger icon container */
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 1.5rem;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05); /* Inner shadow */
+}
+
+.service-icon {
+    width: 50px; /* Icon size relative to wrapper */
+    height: 50px;
+}
+
+.service-card h3 {
+    color: var(--color-primary-blue);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.service-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Quiz Section */
+.quiz-section {
+    background-color: #e9f7ef; /* A very light green tint for this section */
+    text-align: center;
+}
+
+.phishing-box {
+    max-width: 850px; /* Slightly wider */
+    margin: 0 auto;
+    border: 1px solid #dee2e6;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background-color: var(--color-card-background);
+}
+
+.fake-email-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.quiz-controls {
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.quiz-button {
+    width: 100%;
+    padding: 1rem 1.5rem; /* Adjusted button padding */
+    font-size: 1.1rem;
+    border-radius: var(--border-radius-sm);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-button[data-answer="scam"] {
+    background-color: #dc3545; /* Red for scam */
+    color: white;
+}
+.quiz-button[data-answer="scam"]:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
+}
+
+.quiz-button[data-answer="real"] {
+    background-color: #6c757d; /* Grey for real (neutral) */
+    color: white;
+}
+.quiz-button[data-answer="real"]:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3);
+}
+
+
+.quiz-message {
+    min-height: 25px; /* Taller message area */
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--color-text-dark);
+}
+
+.correct {
+    color: var(--color-secondary-green);
+}
+
+.incorrect {
+    color: #dc3545;
+}
+
+/* Pricing Section */
+.pricing-section {
+    background: linear-gradient(135deg, var(--color-primary-blue) 0%, #007bff 100%); /* Blue gradient background */
+    color: var(--color-text-light);
+    padding: var(--spacing-lg) 0;
+}
+
+.pricing-section h2 {
+    color: var(--color-text-light);
+    margin-bottom: 3rem;
+}
+
+.pricing-card {
+    max-width: 450px; /* Slightly wider pricing card */
+    margin: 0 auto;
+    background-color: var(--color-card-background);
+    color: var(--color-text-dark);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25); /* More prominent shadow */
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle light border */
+}
+
+.pricing-card h3 {
+    font-size: 1.8rem; /* Larger pricing card title */
+    margin-bottom: 2.5rem;
+    color: var(--color-primary-blue);
+    font-weight: 600;
+}
+
+.price-tag {
+    margin-bottom: 3rem;
+}
+
+.price-tag .price {
+    font-size: 5rem; /* Larger price */
+    font-weight: 800;
+    color: var(--color-secondary-green);
+    display: inline-block;
+    line-height: 1;
+}
+
+.price-tag .currency {
+    font-size: 2.2rem;
+    font-weight: 600;
+    vertical-align: super;
+}
+.price-tag .details {
+    font-size: 1.6rem;
+    font-weight: 500;
+    display: block; /* Make it block for better layout below price */
+    margin-top: 0.5rem;
+    color: #6c757d;
+}
+
+
+.features-list {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 3rem;
+    font-size: 1.15rem;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.features-list li {
+    padding: 0.8rem 0;
+    border-bottom: 1px dashed #e9ecef;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #495057;
+}
+.features-list li:last-child {
+    border-bottom: none;
+}
+.features-list li::before {
+    content: ''; /* Remove default list style */
+}
+.features-list li span {
+    font-size: 1.2rem; /* Checkmark size */
+    color: var(--color-secondary-green);
+}
+
+.pricing-card .primary-cta {
+    width: calc(100% - 2rem); /* Keep some padding inside card */
+    margin: 0 1rem;
+    font-size: 1.15rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-text-dark);
+    color: #ced4da; /* Lighter footer text */
+    padding: var(--spacing-md) 0;
+    font-size: 0.95rem;
+    text-align: center;
+    border-top: 5px solid var(--color-primary-blue); /* Stronger footer accent */
+}
+
+footer p {
+    margin: 0.8rem 0;
+}
+
+.footer-tagline {
+    font-weight: 600;
+    color: var(--color-secondary-green);
+}
+
+.footer-disclaimer {
+    font-size: 0.85rem;
+    color: #adb5bd;
+}
+
+
+/* --- Mobile Responsiveness (Media Queries) --- */
+
+@media (max-width: 992px) {
+    h1 {
+        font-size: 2.8rem;
+    }
+    h2 {
+        font-size: 2.2rem;
+    }
+    .hero-section {
+        padding: var(--spacing-lg) var(--spacing-sm);
+    }
+    .services-grid {
+        gap: var(--spacing-md);
+    }
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .main-nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: var(--color-text-light);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding-bottom: var(--spacing-sm);
+        border-top: 1px solid #eee;
+    }
+
+    .main-nav.open {
+        display: flex;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .main-nav li {
+        text-align: center;
+        width: 100%;
+        border-bottom: 1px solid #eee; /* Added border for clarity */
+    }
+    .main-nav li:last-child {
+        border-bottom: none;
+    }
+
+    .main-nav a {
+        display: block;
+        padding: 1.2rem;
+        width: 100%; /* Full width links */
+    }
+
+    .cta-nav-button {
+        margin-top: 15px; /* More spacing */
+    }
+
+    /* General Content Adjustments */
+    .hero-section {
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
+    h1 {
+        font-size: 2.2rem;
+    }
+    .hero-section .sub-headline {
+        font-size: 1.2rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    p.section-description {
+        font-size: 1rem;
+    }
+    .service-card {
+        padding: var(--spacing-sm);
+    }
+    .icon-wrapper {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 1rem;
+    }
+    .service-icon {
+        width: 45px;
+        height: 45px;
+    }
+    .service-card h3 {
+        font-size: 1.2rem;
+    }
+    .quiz-controls {
+        flex-direction: column; /* Stack quiz buttons on very small screens */
+        gap: 15px;
+        padding: var(--spacing-sm);
+    }
+    .quiz-button {
+        width: 100%; /* Full width buttons */
+        padding: 0.8rem 1rem;
+    }
+    .price-tag .price {
+        font-size: 4rem;
+    }
+    .price-tag .currency, .price-tag .details {
+        font-size: 1.3rem;
+    }
+    .pricing-card .primary-cta {
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+    }
+    footer {
+        padding: var(--spacing-sm) 0;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    .hero-section .sub-headline {
+        font-size: 1rem;
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
+    .logo {
+        font-size: 1.4rem;
+    }
+    .cta-button {
+        padding: 1rem 1.8rem;
+        font-size: 0.95rem;
+    }
+    .pricing-card h3 {
+        font-size: 1.5rem;
+    }
+}
